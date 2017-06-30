@@ -12,7 +12,7 @@ Laravel Reference Implementation of Authenticating Directly with DynamoDB Tables
 
 ## Usage
 
-- rename env-sample to .env
+- rename .env.example to .env
 - edit .env.  set the following values:
 -- DYNAMODB_KEY - key created from AWS console
 -- DYNAMODB_SECRET - relate secret from AWS console
