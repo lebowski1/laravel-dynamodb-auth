@@ -1,5 +1,6 @@
 # laravel-dynamodb-auth
-Laravel Reference Implementation of Authenticating Directly with DynamoDB Tables Instead of MySQL
+- Laravel Reference Implementation of Authenticating Directly with DynamoDB Tables Instead of MySQL.
+- Also provides convenience command to create users
 
 ## Assumptions
 - you have an AWS account set up
@@ -8,7 +9,7 @@ Laravel Reference Implementation of Authenticating Directly with DynamoDB Tables
 - table has the following fields:
 -- id - String - primary key
 -- username - String
--- password - String
+-- password - String (hashed)
 
 ## Usage
 
@@ -28,6 +29,8 @@ Laravel Reference Implementation of Authenticating Directly with DynamoDB Tables
 - navigate to http://localhost:8000 and click the login link
 
 
-## Modifications
-- this code assumes that the password is stored in the clear
-- update DynamoDbProvider.validateCredentials() to compare the password to a hashed verison of it (assuming you're saving the user's password in that manner)
+## Commands
+### php artisan add:user {username} {password}
+- adds a user to the laravel table
+- uses a UUID (String) as a PK
+- password is hashed
